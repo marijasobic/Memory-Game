@@ -98,14 +98,13 @@ body {
     background-position: center center;
     /* background-repeat: no-repeat; */
     background-size:  contain; 
-    border: solid 2px #564343;
-
 }
 .back, 
 .front {
     position: absolute;
     backface-visibility: hidden;
     box-shadow: 3px 3px 10px rgb(116, 233, 233);
+    border: solid 2px #564343;
 }
 .back {
     background-color: #fab942;
@@ -130,6 +129,7 @@ body {
     /* background: none; */
     background: transparent;
     box-shadow: none;
+    border: none;
     
 }
 /* !!!!! za modal !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
