@@ -274,15 +274,16 @@ function closeModal(){
 }
 // pokretanje igre ponovo 
 function playAgain(){
-    modal.classList.remove("show");
-    modal.style.display= "none";
-    vreme.innerHTML = "Timer: 0h : 0min : 0sek";
-    brojPokusaja.innerHTML = "Moves: 0";
+    //modal.classList.remove("show");
+    //odal.style.display= "none";
+    //vreme.innerHTML = "Timer: 0h : 0min : 0sek";
+    //brojPokusaja.innerHTML = "Moves: 0";
     // resetPokusaja();
-   klik = 0;
-   document.getElementById('easy').style.display = 'block';
-     easy();
-      dogadjaj();
+   //klik = 0;
+  // document.getElementById('easy').style.display = 'block';
+    // easy();
+     // dogadjaj();
+    restart();
     
 }
 
