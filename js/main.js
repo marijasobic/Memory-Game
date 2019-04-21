@@ -81,17 +81,17 @@ duplo.forEach(item => {
     
     //kartice kojima dajemo ime i slike iz karticeNiz
     const kartica = document.createElement('div');
-          kartica.classList.add('kartica');
-          kartica.dataset.name = item.name;
-          kartica.style.backgroundImage = `url(${item.img})`;
+    kartica.classList.add('kartica');
+    kartica.dataset.name = item.name;
+    kartica.style.backgroundImage = `url(${item.img})`;
 
     //front je prednja strana kartice
     const front = document.createElement('div');
-          front.classList.add('front');
+    front.classList.add('front');
 
     //back je zadnja strana kartice(sa slikama)
     const back = document.createElement('div');
-          back.classList.add('back');
+    back.classList.add('back');
 
     polje.appendChild(kartica);
     kartica.appendChild(front);
@@ -106,13 +106,13 @@ function timer() {
         if (sekunde == 60) {
             minuti++;
             sekunde = 0;
-        }
+        };
         if (minuti == 60) {
             sati++;
             minuti = 0;
-        }
-    }, 1000)
-}
+        };
+    }, 1000);
+};
 
 //reset tajmera:
 vreme.innerHTML = "Timer: 0h : 0min : 0sek";
@@ -130,8 +130,7 @@ const match = () => {
     izabrano.forEach(kartica => {
          kartica.classList.add('match');
     });
-
-}
+};
 
 //reset pokusaja (moves):
 moves = 0;
@@ -148,8 +147,7 @@ const resetPokusaja = () => {
     izabrano.forEach(kartica => {
         kartica.classList.remove('selected');
     });
-
-}
+};
 
 //Otvaranje kartica i stavljanje u niz, pa aktiviranje tajmera klikom na prvu:
 function otvaranje() {
@@ -157,14 +155,13 @@ function otvaranje() {
     let len = otvoreneKartice.length;
     if (len === 1) {
             timer();
-
-    }
+    };
     if (upareneKartice.length == 6) {
         clearInterval(interval);
-        // finalTime = vreme1.innerHTML
         setTimeout(cestitamo, 1500);
     };
-}
+};
+
 //Brojac pokusaja(moves) igraca:
 klik = 0;
 let brojPokusaja = document.getElementById('br_pokusaja');
@@ -176,6 +173,7 @@ function brojac() {
     klik++;
     brojPokusaja.innerHTML =`Moves: ${klik}`;
 }
+
 function dogadjaj() {
 
      // modal.style.display= "none";
