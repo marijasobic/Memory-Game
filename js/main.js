@@ -175,28 +175,22 @@ function brojac() {
 }
 
 function dogadjaj() {
-
-     // modal.style.display= "none";
-     //Dodavanje dogadjaja polju
+    //Dodavanje dogadjaja polju
     polje.addEventListener('click', function (event) {
         
         //event.target tamo gde kliknemo
-        var klik = event.target;
+        let klik = event.target;
         //ne dozvoljavamo da se selektuje ceo deo section iza kartica, vec samo kartica moze, i to samo jednom
         if (klik.nodeName === 'SECTION' || klik === prethodniKlik || klik.parentNode.classList.contains('selected')) {
             return;
-        }
-
-
+        };
         if (moves < 2) {
             moves++;
-
             if (moves === 1) {
                 //Definisanje prvog pokusaja
                 prvi = klik.parentNode.dataset.name;
                 console.log(prvi);
                 klik.parentNode.classList.add('selected');
-
             } else {
                //Definisanje drugog pokusaja
                  drugi = klik.parentNode.dataset.name;
@@ -204,10 +198,8 @@ function dogadjaj() {
                  klik.parentNode.classList.add('selected');
 
                 brojac();
-                console.log(brojPokusaja)
-
-            }
-
+                console.log(brojPokusaja);
+            };
             //Ako oba pokusaja nisu prazni...
             if (prvi !== '' && drugi !== '') {
                  //i prvi i drugi pokusaj su pogodjeni
@@ -216,73 +208,51 @@ function dogadjaj() {
                     upareneKartice.push(izabrano);
                     console.log(upareneKartice);
 
-                    //run the match function sa odlaganjem
+                    //pozivanje funkcije match sa odlaganjem
                     setTimeout(match, 1200);
-                     //run the reset function
+                    //pozivanje funkcije resetPokusaja
                     setTimeout(resetPokusaja, 1200);
-
                 } else {
-                      setTimeout(resetPokusaja, 1200);
-                }
-
-            }
+                    setTimeout(resetPokusaja, 1200);
+                };
+            };
             //Set previous target to clicked (I'll assign the clicked value to prevousTarget after the first click.)
-             prethodniKlik = klik;
-
-            //    brojac();
-        }
+            //prethodniKlik = klik;
+        };
         otvaranje();
-    })
-}
+    });
+};
 
 //MODAl:
 //cestitka kad sve kartice upare
 function cestitamo(){
-   // if (upareneKartice.length == 6){
-     //   clearInterval(interval);
-        finalTime = vreme.innerHTML;
-    //show congratulations modal
+    //vreme zavrsetka partije
+    finalTime = vreme.innerHTML;
+    //prikaz modala za cestitanje
     modal.classList.add("show");
-
     modal.style.display = 'block';
 
     //declare star rating variable
     //var starRating = document.querySelector(".stars").innerHTML;
-    //showing move, rating, time on modal
+    //prikaz konacnog broja pokusaja i konacnog vremena
     document.getElementById("finalMove").innerHTML = klik;
-    
     //document.getElementById("starRating").innerHTML = starRating;
     document.getElementById("totalTime").innerHTML = finalTime;
-    //closeicon on modal
+    //pozivanje funkcije za zatvaranje modala
     closeModal();
-  //  };
-}
+};
+
 // zatvaranje modula na x
 function closeModal(){
     ikonica.addEventListener("click", function(e){
-        //modal.classList.remove("show");
-        //modal.style.display= "none";
         restart();
-        //vreme.innerHTML = "Timer: 0h : 0min : 0sek";
-        //brojPokusaja.innerHTML = "Moves: 0";
-        //dogadjaj();
     });
-}
-// pokretanje igre ponovo 
-function playAgain(){
-    //modal.classList.remove("show");
-    //odal.style.display= "none";
-    //vreme.innerHTML = "Timer: 0h : 0min : 0sek";
-    //brojPokusaja.innerHTML = "Moves: 0";
-    // resetPokusaja();
-   //klik = 0;
-  // document.getElementById('easy').style.display = 'block';
-    // easy();
-     // dogadjaj();
-    restart();
-    
-}
+};
 
+// pokretanje igre ponovo na dugme playAgain
+function playAgain(){
+    restart();
+}
 
     
 
