@@ -58,8 +58,8 @@ const karticeNiz = [
 ];
 
 // nizovi kada se otvaraju i upare kartice 
-var otvoreneKartice = [];
-var upareneKartice = [];
+let otvoreneKartice = [];
+let upareneKartice = [];
 
 const game = document.getElementById('game');
 
@@ -78,24 +78,25 @@ duplo.sort(() => 0.5 - Math.random());
 //za svaku karticu u nizu:
 duplo.forEach(item => {
     //Pravimo div u koji smestamo kartice , sa klasama kartica, front i back (prednja i zadnja strana kartice)
-    //const kartica = document.createElement
-    var kartica = document.createElement('div');
-    kartica.classList.add('kartica');
-    kartica.dataset.name = item.name;
-    kartica.style.backgroundImage = `url(${item.img})`;
+    
+    //kartice kojima dajemo ime i slike iz karticeNiz
+    const kartica = document.createElement('div');
+          kartica.classList.add('kartica');
+          kartica.dataset.name = item.name;
+          kartica.style.backgroundImage = `url(${item.img})`;
 
-    //const front = document.createElement
-    var front = document.createElement('div');
-    front.classList.add('front');
+    //front je prednja strana kartice
+    const front = document.createElement('div');
+          front.classList.add('front');
 
-    //const back = document.createElement
-    var back = document.createElement('div');
-    back.classList.add('back');
+    //back je zadnja strana kartice(sa slikama)
+    const back = document.createElement('div');
+          back.classList.add('back');
 
     polje.appendChild(kartica);
     kartica.appendChild(front);
     kartica.appendChild(back);
-})
+});
     
     
 function timer() {
