@@ -115,14 +115,10 @@ function timer() {
 }
 
 //reset tajmera:
-    // sekunde = 0;
-    // minuti = 0;
-    // sati = 0;
-    // var vreme = document.getElementById('sat');
-    vreme.innerHTML = "Timer: 0h : 0min : 0sek";
-    vreme.style.paddingTop = "10px";
-    vreme.style.color = "pink";
-    clearInterval(interval);
+vreme.innerHTML = "Timer: 0h : 0min : 0sek";
+vreme.style.paddingTop = "10px";
+vreme.style.color = "pink";
+clearInterval(interval);
    
 function restart(){
     location.reload();
@@ -130,7 +126,7 @@ function restart(){
 
 //Match funkcija kojom izabranoj kartici dodajemo klasu match
 const match = () => {
-    var izabrano = document.querySelectorAll('.selected')
+    let izabrano = document.querySelectorAll('.selected')
     izabrano.forEach(kartica => {
          kartica.classList.add('match');
     });
@@ -139,7 +135,7 @@ const match = () => {
 
 //reset pokusaja (moves):
 moves = 0;
-var izabrano = document.querySelectorAll('.selected');
+let izabrano = document.querySelectorAll('.selected');
 izabrano.innerHTML = moves;
 
 //resetovanje pokusaja da bi imali vise pokusaja:
@@ -148,17 +144,17 @@ const resetPokusaja = () => {
     drugi = '';
     moves = 0;
         
-    var izabrano = document.querySelectorAll('.selected');
+    let izabrano = document.querySelectorAll('.selected');
     izabrano.forEach(kartica => {
         kartica.classList.remove('selected');
-    })
+    });
 
 }
 
 //Otvaranje kartica i stavljanje u niz, pa aktiviranje tajmera klikom na prvu:
 function otvaranje() {
     otvoreneKartice.push(izabrano);
-    var len = otvoreneKartice.length;
+    let len = otvoreneKartice.length;
     if (len === 1) {
             timer();
 
@@ -171,13 +167,12 @@ function otvaranje() {
 }
 //Brojac pokusaja(moves) igraca:
 klik = 0;
-var brojPokusaja = document.getElementById('br_pokusaja');
+let brojPokusaja = document.getElementById('br_pokusaja');
 brojPokusaja.style.paddingTop = '10px';
 brojPokusaja.style.color = "pink";
 brojPokusaja.innerHTML = "Moves: 0";
 
 function brojac() {
-    //moves++;
     klik++;
     brojPokusaja.innerHTML =`Moves: ${klik}`;
 }
