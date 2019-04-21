@@ -31,31 +31,33 @@ let ikonica = document.querySelector(".close");
 
 //Niz kartica koje se prikazuju
 const karticeNiz = [
-        {
-            name: 'sladoled',
-            img: './img/sladoled.jpg',
-        },
-        {
-            name: 'pas',
-            img: './img/Jack.jpg',
-        },
-        {
-            name: 'maca',
-            img: './img/Cat.jpg',
-        },
-        {
-            name: 'pahulja',
-            img: './img/plava_pahulja.jpg',
-        },
-        {
-            name: 'ukras',
-            img: './img/ukras.jpg',
-        },
-        {
-            name: 'koktel',
-            img: './img/coctail.jpg'
-        }
-    ]
+    {
+        name: 'sladoled',
+        img: './img/sladoled.jpg',
+    },
+    {
+        name: 'pas',
+        img: './img/Jack.jpg',
+    },
+    {
+        name: 'maca',
+        img: './img/Cat.jpg',
+    },
+    {
+        name: 'pahulja',
+        img: './img/plava_pahulja.jpg',
+    },
+    {
+        name: 'ukras',
+        img: './img/ukras.jpg',
+    },
+    {
+        name: 'koktel',
+        img: './img/coctail.jpg'
+    }
+];
+
+// nizovi kada se otvaraju i upare kartice 
 var otvoreneKartice = [];
 var upareneKartice = [];
 
