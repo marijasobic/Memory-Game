@@ -122,7 +122,7 @@ function timer() {
     clearInterval(interval);
    
 function restart(){
-    window.onload = easy();
+    location.reload();
 }
 
 //Match funkcija kojom izabranoj kartici dodajemo klasu match
@@ -264,11 +264,12 @@ function cestitamo(){
 // zatvaranje modula na x
 function closeModal(){
     ikonica.addEventListener("click", function(e){
-        modal.classList.remove("show");
-        modal.style.display= "none";
-        vreme.innerHTML = "Timer: 0h : 0min : 0sek";
-        brojPokusaja.innerHTML = "Moves: 0";
-        dogadjaj();
+        //modal.classList.remove("show");
+        //modal.style.display= "none";
+        restart();
+        //vreme.innerHTML = "Timer: 0h : 0min : 0sek";
+        //brojPokusaja.innerHTML = "Moves: 0";
+        //dogadjaj();
     });
 }
 // pokretanje igre ponovo 
