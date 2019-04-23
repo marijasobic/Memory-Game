@@ -240,6 +240,7 @@ function cestitamo(){
     document.getElementById("totalTime").innerHTML = finalTime;
     //pozivanje funkcije za zatvaranje modala
     closeModal();
+    polje.style.display = "none";
 };
 
 // zatvaranje modula na x
