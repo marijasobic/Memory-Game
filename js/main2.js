@@ -258,6 +258,7 @@ function cestitamo2(){
     document.getElementById("totalTime3").innerHTML = finalTime2;
     //pozivanje funkcije za zatvaranje modala
     closeModal2();
+    polje2.style.display = "none";
 };
 
 // zatvaranje modula na x
