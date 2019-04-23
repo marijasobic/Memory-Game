@@ -123,7 +123,7 @@ duplo2.forEach(item => {
     
 function timer2() {
     interval2 = setInterval(function () {
-        vreme2.innerHTML = `Timer: ${sati2}h : ${minuti2}min : ${sekunde2}sek`;
+        vreme2.innerHTML = `vreme: ${sati2}h : ${minuti2}min : ${sekunde2}sek`;
         sekunde2++;
         if (sekunde2 == 60) {
             minuti2++;
@@ -136,7 +136,7 @@ function timer2() {
     }, 1000);
 }
 //reset tajmera:
-vreme2.innerHTML = "Timer: 0h : 0min : 0sek";
+vreme2.innerHTML = "vreme: 0h : 0min : 0sek";
 vreme2.style.paddingTop = "10px";
 vreme2.style.color = "pink";
 clearInterval(interval2);
