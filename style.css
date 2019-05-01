@@ -53,6 +53,7 @@ body {
     margin: 3% auto;
     box-shadow: 2px 2px 2px #11c9b1;
     position: relative;
+    background-color: #090808bd;
 }
 #pravila h3 {
     font-family: 'Carter One', cursive;
