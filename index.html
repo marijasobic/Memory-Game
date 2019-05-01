@@ -12,92 +12,85 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
+
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="style.css">
 </head>
 <body >
     <div class="container">
-        <div class="pocetak">
+        <!--NASLOV I DUGMICI (glavna strana, vidljivi deo)-->     
+        <div class="pocetak"> 
            <div id="naslov">
                <h1><b>MEMORY GAME</b></h1></div>
-           <div class="dugmici">
-              <button type="button" class="btn btn-outline-success" onclick="easy()">EASY</button>
-              <button type="button" class="btn btn-outline-primary" onclick="medium()">MEDIUM</button>
-              <button type="button" class="btn btn-outline-danger" onclick="hard()">HARD</button>
-            </div>
-        </div>
-        <div id="easy">
-            <div id="dodatak">
-                <div id="sat"></div>
-                <div id="br_pokusaja"></div>
+           <div class="tipke"> 
+                <button type="button" class="btn btn-outline-secondary" id="pravila_igre" onclick="pravila()">RULES</button>   
+               <div class="dugmici"> <!-- Buttons za nivoe-->
+                    <button type="button" class="btn btn-outline-success" id="easy1" onclick="easy()">EASY</button>
+                    <button type="button" class="btn btn-outline-primary" id="medium1" onclick="medium()">MEDIUM</button>
+                    <button type="button" class="btn btn-outline-danger" id="hard1" onclick="hard()">HARD</button>
+                </div>
                 <button type="button" class="btn btn-outline-warning" onclick="restart()">RESTART</button>
-            </div>
-            <div id="game">
-                <div id="popup1" class="overlay">
-                    <div class="popup">
-                        <h2><b>BRAVO!!!</b></h2>
-                        <button class="close" data-dismiss="modal">x</button>
-                        <div class="content-1">Ti si pobednik !!!</div>
-                        <div class="content-2">
-                            <p>Imao si <span id=finalMove> </span> pokusaja </p>
-                            <p>Za <span id=totalTime> </span> </p>
-                            <p>Rating:  <span id=starRating></span></p>
-                        </div>
-                        <button class="btn btn-success" id="play-again" onclick="playAgain()">Igraj ponovo 😄</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-     
-        <div id="medium">
-            <div id="dodatak1">
-                <div id="sat1"></div>
-                <div id="br_pokusaja1"></div>
-                <button type="button" class="btn btn-outline-warning" onclick="restart1()">RESTART</button>
-            </div>
-            <div id="game1">
-                <div id="popup2" class="overlay">
-                    <div class="popup">
-                        <h2><b>BRAVO!!!</b></h2>
-                        <button class="close" id="ikonica" data-dismiss="modal">x</button>
-                        <div class="content-1">Ti si pobednik !!!</div>
-                        <div class="content-2">
-                            <p>Imao si <span id=finalMove2> </span> pokusaja </p>
-                            <p>Za <span id=totalTime2> </span> </p>
-                            <p>Rating:  <span id=starRating2></span></p>
-                        </div>
-                        <button class="btn btn-success" id="play-again2" onclick="playAgain1()">Igraj ponovo 😄</button>
-                    </div>
-                </div>
             </div>
         </div>
 
-        <div id="hard">
-            <div id="dodatak2">
-                <div id="sat2"></div>
-                <div id="br_pokusaja2"></div>
-                <button type="button" class="btn btn-outline-warning" onclick="restart2()">RESTART</button>
+        <!-- DODATAK (elementi koji su vidljivi na klik dugmeta nivoa)-->
+        <div id="dodatak"> 
+            <div id="sat1">
+                <p>Timer: <span id="sat"></span></p>
             </div>
-            <div id="game2">
-                <div id="popup3" class="overlay">
-                    <div class="popup">
-                        <h2><b>BRAVO!!!</b></h2>
-                        <button class="close" id="ikonica2" data-dismiss="modal">x</button>
-                        <div class="content-1">Ti si pobednik !!!</div>
-                        <div class="content-2">
-                            <p>Imao si <span id=finalMove3> </span> pokusaja </p>
-                            <p>Za <span id=totalTime3> </span> </p>
-                            <p>Rating:  <span id=starRating3></span></p>
-                        </div>
-                        <button class="btn btn-success" id="play-again3" onclick="playAgain2()">Igraj ponovo 😄</button>
-                    </div>
+            
+            <div id="br_pokusaja"></div>
+            <div id="zvezdice">
+                <p>Rating: </p>
+            </div> 
+            <ul class="stars">
+                <li><i class="fa fa-star"></i></li>
+                <li><i class="fa fa-star"></i></li>
+                <li><i class="fa fa-star"></i></li>
+            </ul>    
+        </div>
+
+        <!-- PRAVILA IGRE (na klik dugmeta pravila igre) -->   
+        <div id="pravila">  
+            <h3><b>PRAVILA IGRE</b></h3>
+            <button class="close" data-dismiss="modal">x</button>
+            <h3>Izaberite nivo i dobićete polje sa karticama. Otvarajte po dve kartice i pamtite slike. Kada pogodite sličice, te kartice će nestati sa polja. <br>Cilj je da za što kraće vreme i sa što manje poteza uparite sve kartice. Kako vreme prolazi broj osvojenih zvezdica se smanjuje.</h3>
+            <h3>SREĆNO!</h3>
+        </div>
+
+        <!-- MODAL -->
+        <div id="popup1" class="overlay">
+            <div class="popup">
+                <h2><b>BRAVO!!!</b></h2>
+                <button class="close" data-dismiss="modal">x</button>
+                <div class="sadrzaj-1">Ti si pobednik !!!</div>
+                <div class="sadrzaj-2">
+                    <p>Imao si <span id=finalMove></span> pokusaja </p>
+                    <p>Za vreme: <span id=totalTime></span> </p>
+                    <p>Skor: <span id=starRating></span></p>
                 </div>
+                <button class="btn btn-success" id="play-again" onclick="playAgain()">Igraj ponovo 😄</button>
             </div>
         </div>
+
+        <!-- POLJA (Prazni divovi gde se dodaju polja sa karticama) -->
+        <div id="easy">
+            <div id="game"></div>
+        </div>
+     
+        <div id="medium">
+            <div id="game1"></div>
+        </div>
+
+        <div id="hard">
+            <div id="game2"></div>
+        </div>
     </div>
-    <script src="./js/main.js"></script>
-    <script src="./js/main1.js"></script>
-    <script src="./js/main2.js"></script>
+    
+    <script src="javascript.js"></script>
     
 </body>
 </html>
