@@ -22,7 +22,6 @@ body {
     background-repeat: repeat-x;
     background-size: contain;
     background-position: center;
-    background-clip: text;
     -webkit-background-clip: text;
     animation: animate 15s linear infinite;
 }
@@ -61,12 +60,12 @@ body {
 }
 #pravila .close {
     position: absolute;
-	top: 20px;
-	right: 30px;
-	/* transition: all 200ms; */
-	font-size: 30px;
-	font-weight: bold;
-	text-decoration: none;
+    top: 20px;
+    right: 30px;
+    /* transition: all 200ms; */
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
     color: #11c9b1;
 }
 /* --- KRAJ pravila igre --- */
@@ -105,20 +104,20 @@ body {
     padding-top: 10px;  
 }
 .stars {
-	margin: 0;
-	padding: 0;
-	display: inline-block;
-	margin: 0 5px 0 0;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    margin: 0 5px 0 0;
 }
 .stars li {
-	list-style: none;
-	display: inline-block;
+    list-style: none;
+    display: inline-block;
 }
 .fa-star {
-	color:rgb(109, 240, 44);
+    color:rgb(109, 240, 44);
 }
 #starRating li {
-	display: inline-block;
+    display: inline-block;
 }
 /* --- KRAJ dodatak --- */
 
@@ -178,36 +177,35 @@ body {
 
 /* --- MODAL --- */
 .overlay {
-	position: fixed;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	/* transition: opacity 500ms; */
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* transition: opacity 500ms; */
 }
 .overlay:target {
-	/* visibility: visible; */
-	opacity: 1;
+    /* visibility: visible; */
+    opacity: 1;
 }
 .popup {
-	margin: 70px auto;
-	padding: 20px;
+    margin: 70px auto;
+    padding: 20px;
     border-radius: 30px;
     width: 80%;
-	position: relative;
-	transition: all 5s ease-in-out;
+    position: relative;
+transition: all 5s ease-in-out;
     font-family: 'Carter One', cursive;
     text-align: center;
     background-color:#100409;
     box-shadow: 0px 0px 40px 20px #e882db;  
 } 
 .popup h2 {
-	margin-top: 30px;
+    margin-top: 30px;
     color: rgba(255,255,255, .1);
     background-image: url('./img/colors.jpg');
     background-size: contain;
     background-repeat: repeat-x;
-    background-clip: text;
     -webkit-background-clip: text;
     font-family: 'Carter One', cursive;
     font-size: 70px;
@@ -241,9 +239,9 @@ body {
 .sadrzaj-2 {
 	max-height: 30%;
 	overflow: auto;
-    text-align: center;
-    font-size: 30px;
-    color: #bbead9;
+        text-align: center;
+        font-size: 30px;
+        color: #bbead9;
 }
 #finalMove {
     color: violet;
