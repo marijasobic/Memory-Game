@@ -3,13 +3,10 @@
 }
 body {
     margin: 20px;
-    background-color:rgb(16, 4, 9);
-    /* font-family: 'Indie Flower', cursive; */
+    background-image: url("./img/pozadina2.jpg");
     font-family: 'Carter One', cursive;
 }
-.container{
-    margin:0 20%;
-}
+/* NASLOV I DUGMICI (glavna strana, vidljivi deo)  */
 .pocetak {
     margin: 0 auto;
     display: flex;
@@ -29,52 +26,72 @@ body {
     -webkit-background-clip: text;
     animation: animate 15s linear infinite;
 }
-@keyframes animation {
-    0% {
-        background-position: left 0px top 10px;
-    }
-    40% {
-        background-position: left 800px top 10px;
-    }
+.tipke {
+    display: flex;
+    flex-direction: row;
+    width: 350px;
 }
-
 .dugmici {
     width: 500px;
     text-align: center;
 }
-.btn-outline-primary {
+/* da se napravi razmak izmedju dugmica nivoa: */
+.btn-outline-primary { 
     margin: 0 5%;
 }
-#easy, #medium, #hard  {
-    display: none;
-}
-#popup1 {
-    display: none;
-}
+/* --- KRAJ naslov i dugmici --- */
 
-/* ZA NIVO EASY */
-/* --------------------------------------------------- */
-/* polje koje se dodaje divu game, gde su kartice */
-#dodatak, .polje {
+/* --- PRAVILA IGRE --- */
+#pravila {
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    width: 300px;
+    height: 400px;
+    border: 1px solid grey;
+    border-radius: 10px;
+    color:#11c9b1;
+    margin: 3% auto;
+    box-shadow: 2px 2px 2px #11c9b1;
+    position: relative;
+}
+#pravila h3 {
+    font-family: 'Carter One', cursive;
+    font-size: 22px;
+}
+#pravila .close {
+    position: absolute;
+	top: 20px;
+	right: 30px;
+	/* transition: all 200ms; */
+	font-size: 30px;
+	font-weight: bold;
+	text-decoration: none;
+    color: #11c9b1;
+}
+/* --- KRAJ pravila igre --- */
+
+/* --- DODATAK (elementi koji su vidljivi na klik dugmeta nivoa) --- */
+#dodatak,
+.polje { /* polje koje se dodaje divu game, gde su kartice */
     /* max-width: 960px; */
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
-    /* justify-content: space-evenly; */
-    width: 320px;
-    font-family: 'Carter One', cursive;
+    justify-content: space-evenly;
     font-size: 1.2em;
-    
+    margin-top: 5px;
 }
 #dodatak {
-    /* height: 100px ; */
-    flex-direction: row;
+    height: 100px ;
     align-items: center;
     justify-content: center;
     text-align: center;
-    margin-top: 5px;
+    display: none;
 }
-#sat {
+#sat1 {
+    color: pink;
+    padding-top: 10px;
     width: 250px;
     height: 50px;
 }
@@ -82,102 +99,108 @@ body {
     width: 150px;
     height: 50px;
 }
-
-.kartica {
-    margin: 5px;
-    position: relative;
-    transition: all 0.4s linear;
-    transform-style: preserve-3d;
+/* Rating (deo sa zvezdicama) */
+#zvezdice {
+    color: pink;
+    padding-top: 10px;  
 }
-.kartica, 
-.back, 
-.front {
-    height: 70px;
-    width: 70px;
-    border-radius: 10px;
-    background-position: center center;
-    /* background-repeat: no-repeat; */
-    background-size:  contain; 
-}
-.back, 
-.front {
-    position: absolute;
-    backface-visibility: hidden;
-    box-shadow: 3px 3px 10px rgb(116, 233, 233);
-    border: solid 2px #564343;
-}
-.back {
-    background-color: #fab942;
-    background-image:  url('./img/Hearts.jpg') ;
-    /* background-repeat: no-repeat; */
-    /* background-position: center center; */
-    background-size:  contain;
-}
-.front {
-    transform: rotateY(180deg);
-    
-}
-.selected {
-    transform: rotateY(180deg);
-}
-.match {
-    background-image: none !important;
-}
-.match .kartica, .match .back , .match .back1, .match .back2 {
-    /* background: white !important; */
-    /* background-blend-mode: darken; */
-    /* background: none; */
-    background: transparent;
-    box-shadow: none;
-    border: none;
-    
-}
-/* !!!!! za modal !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 .stars {
 	margin: 0;
 	padding: 0;
 	display: inline-block;
 	margin: 0 5px 0 0;
 }
-
- .stars li {
+.stars li {
 	list-style: none;
 	display: inline-block;
 }
+.fa-star {
+	color:rgb(109, 240, 44);
+}
+#starRating li {
+	display: inline-block;
+}
+/* --- KRAJ dodatak --- */
 
+/* --- POLJA (ovde se dodaju polja sa karticama na klik nivoa) --- */
+#easy, #medium, #hard,
+#popup1 {
+    display: none;
+    justify-content: center;
+}
+#game {
+    width: 200px;
+}
+#game1 {
+    width: 300px;
+}
+#game2 .polje {
+    width: 320px;
+}
+.kartica {
+    margin: 5px;
+    /* position: relative; */
+    transition: all 0.4s linear;
+    transform-style: preserve-3d;
+}
+.kartica, .back, .front {
+    border-radius: 10px;
+    background-position: center center;
+    background-size:  contain; 
+    height: 40px;
+    width: 40px;
+}
+.back, .front {
+    position: absolute;
+    backface-visibility: hidden;
+    box-shadow: 5px 5px 5px rgb(92, 58, 58);
+}
+.back {
+    background-image:  url('./img/Hearts.jpg') ;
+    /* background-repeat: no-repeat; */
+    /* background-position: center center; */
+    background-size:  contain;
+}
+.front, .selected {
+    transform: rotateY(180deg);
+}
+.match {
+    background-image: none !important;
+}
+/* kada se kartice upare */
+.match .kartica,
+.match .back {
+    background: transparent;
+    box-shadow: none;
+    border: none;
+}
+/* --- KRAJ polja --- */
+
+/* --- MODAL --- */
 .overlay {
 	position: fixed;
 	top: 0;
 	bottom: 0;
 	left: 0;
 	right: 0;
-    /* background: rgba(0, 0, 0, 0.7); */
-    background-color:#2f2f1f;
-	transition: opacity 500ms;
-	/* visibility: hidden; */
-	/* opacity: 0; */
+	/* transition: opacity 500ms; */
 }
-
 .overlay:target {
-	visibility: visible;
+	/* visibility: visible; */
 	opacity: 1;
 }
-  
 .popup {
 	margin: 70px auto;
 	padding: 20px;
-	/* background: #ffffff; */
     border-radius: 30px;
-       
-	width: 80%;
+    width: 80%;
 	position: relative;
 	transition: all 5s ease-in-out;
     font-family: 'Carter One', cursive;
     text-align: center;
-    background-color: #2f301f;
+    background-color:#100409;
     box-shadow: 0px 0px 40px 20px #e882db;  
-}
-  
+} 
 .popup h2 {
 	margin-top: 30px;
     color: rgba(255,255,255, .1);
@@ -188,25 +211,34 @@ body {
     -webkit-background-clip: text;
     font-family: 'Carter One', cursive;
     font-size: 70px;
+    animation: animate 15s linear infinite;
 }
-
+/* Animacija za naslovna slova */
+@keyframes animate {
+    0% {
+        background-position: left 0px top 10px;
+    }
+    40% {
+        background-position: left 800px top 10px;
+    }
+}
+/* za close dugme x koje zatvara modal */
 .popup .close {
 	position: absolute;
 	top: 20px;
 	right: 30px;
-	transition: all 200ms;
+	/* transition: all 200ms; */
 	font-size: 30px;
 	font-weight: bold;
 	text-decoration: none;
-	color: #eeadad;
+    color: #eeadad;
+    /* background-color: transparent; */
 }
-
 .popup .close:hover {
 	color: #E5F720;
 }
-
-.popup .content-1,
-.content-2 {
+.popup .sadrzaj-1,
+.sadrzaj-2 {
 	max-height: 30%;
 	overflow: auto;
     text-align: center;
@@ -216,238 +248,77 @@ body {
 #finalMove {
     color: violet;
 }
-.show {
+/* .show {
 	visibility: visible !important;
 	opacity: 100 !important;
-}
-
-#starRating li {
-	display: inline-block;
-}
-
+} */
 #play-again {
 	background-color: #96174d;
 	padding: 0.7rem 1rem;
 	font-size: 1.1rem;
 	display: block;
 	margin: 0 auto;
-	/* width: 50%; */
 	font-family: 'Carter One', cursive;;
 	color: #ffffff;
 	border-radius: 5px;
 }
-/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* KRAJ modala */
 
-/* ZA NIVO MEDIUM */
-/* --------------------------------- */
-#dodatak1, .polje1 {
-    /* max-width: 960px; */
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    /* justify-content: space-evenly; */
-    width: 320px;
-    /* height: 700px; */
-    font-family: 'Gloria Hallelujah', cursive;
-    font-size: 1.2em;
-    margin-top: 5px;
-    
-}
-#dodatak1 {
-    /* height: 150px ; */
-    /* background-color: darkturquoise; */
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-#sat1 {
-    /* background-color: crimson; */
-    width: 250px;
-    height: 50px;
-}
-#br_pokusaja1 {
-    /* background-color: chocolate; */
-    width: 150px;
-    height: 50px;
-}
-.kartica1 {
-    margin: 5px;
-    
-    position: relative;
-    transition: all 0.4s linear;
-    transform-style: preserve-3d;
-    
-}
-.kartica1, 
-.back1, 
-.front1 {
-    height: 50px;
-    width: 50px;
-    border-radius: 10px;
-    background-position: center center;
-    /* background-repeat: no-repeat; */
-    background-size:  contain; 
- 
-}
-.back1, 
-.front1 {
-    position: absolute;
-    backface-visibility: hidden;
-    box-shadow: 5px 5px 5px rgb(92, 58, 58);
-}
-.back1 {
-    background-color: #fab942;
-    background-image:  url('Hearts.jpg') ;
-    /* background-repeat: no-repeat; */
-    /* background-position: center center; */
-    background-size:  contain;
-    /* box-shadow: 5px 5px rgb(92, 58, 58); */
-}
-.front1 {
-    transform: rotateY(180deg);
-    /* background-color: white; */
-    /* background-size: contain; */
-    /* background-repeat: no-repeat; */
-    /* background-position: center center; */
-}
-
-/* ZA NIVO HARD */
-/* ------------------------------------------------------- */
-#dodatak2, .polje2 {
-    /* max-width: 960px; */
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    /* justify-content: space-evenly; */
-    width: 320px;
-    /* height: 700px; */
-    font-family: 'Gloria Hallelujah', cursive;
-    font-size: 1.2em;
-    margin-top: 5px;
-    
-}
-#dodatak2 {
-    /* height: 150px ; */
-    /* background-color: darkturquoise; */
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-#sat2 {
-    /* background-color: crimson; */
-    width: 250px;
-    height: 50px;
-}
-#br_pokusaja2 {
-    /* background-color: chocolate; */
-    width: 150px;
-    height: 50px;
-}
-.kartica2 {
-    margin: 5px;
-    
-    position: relative;
-    transition: all 0.4s linear;
-    transform-style: preserve-3d;
-    
-}
-.kartica2, 
-.back2, 
-.front2 {
-    height: 40px;
-    width: 40px;
-    border-radius: 10px;
-    background-position: center center;
-    /* background-repeat: no-repeat; */
-    background-size:  contain; 
- 
-}
-.back2, 
-.front2 {
-    position: absolute;
-    backface-visibility: hidden;
-    box-shadow: 5px 5px 5px rgb(92, 58, 58);
-}
-.back2 {
-    background-color: #fab942;
-    background-image:  url('Hearts.jpg') ;
-    /* background-repeat: no-repeat; */
-    /* background-position: center center; */
-    background-size:  contain;
-    /* box-shadow: 5px 5px rgb(92, 58, 58); */
-}
-.front2 {
-    transform: rotateY(180deg);
-    /* background-color: white; */
-    /* background-size: contain; */
-    /* background-repeat: no-repeat; */
-    /* background-position: center center; */
-}
-@media (min-width: 700px){
+@media (min-width: 742px){
     .container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
         margin-left: 12%;
         margin-right: 20%;
     }
     #naslov h1 {
         font-size: 100px;
-        
     }
- #dodatak, .polje{
-        width: 700px;
+    .tipke {
+        display: flex;
+        flex-direction: row;
+        width: auto;
+    }
+    #dodatak {
+        text-align: unset;
+    }
+    #pravila {
+        width: 600px;
+        height: auto;
+        margin: 3% 23%;
+        padding: 3%;
+    }
+    #pravila h3 {
+        font-size: 26px;
+    }
+    .polje {
+        width: auto;
         justify-content: space-evenly;
     }
-
-.kartica, 
-.back, 
-.front {
-    height: 150px;
-    width: 150px;
-    border-radius: 10px;
-}
-
-/* !!!!!!!!!!!! MODAL !!!!!!!!!! */
-.popup {
-    width: 50%;
-}
-.popup h2 {
-    font-size: 100px;
-}
-#play-again {
-    width: 50%;
-}
-/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
-
-/* ZA NIVO MEDIUM */
-/* ----------------------------------------- */
-#dodatak1, .polje{
-    width: 700px;
-    justify-content: space-evenly;
-}
-
-.kartica1, 
-.back1, 
-.front1 {
-height: 115px;
-width: 115px;
-border-radius: 10px;
-}
-/* ------------------------------------------ */
-
-
-/* ZA NIVO HARD */
-/* ----------------------------------------- */
-#dodatak2, .polje{
-    width: 700px;
-    justify-content: space-evenly;
-}
-
-.kartica2, 
-.back2, 
-.front2 {
-height: 100px;
-width: 100px;
-border-radius: 10px;
-}
+    #game {
+        width: 500px;
+    }
+    #game1 {
+        width: 600px;
+    }
+    #game2 .polje {
+        width: 700px;
+    }
+    .kartica, 
+    .back, 
+    .front {
+        height: 100px;
+        width: 100px;
+    }
+    
+    .popup {
+        width: 50%;
+    }
+    .popup h2 {
+        font-size: 100px;
+    }
+    #play-again {
+        width: 50%;
+    }
 }
