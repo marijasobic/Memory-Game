@@ -11,3 +11,6 @@ Igra se sastoji od jedne HTML stranice.
 Prvi div Pocetak je vidljiv i tu se nalazi naslov Memory Game i dugmici za izbor nivoa, kao i dugmad Rules(koji prikazuje div sa opisom pravila igre) i Restart (koji relouduje stranicu). 
 Kada se klikne na dugmice nivoa (easy, medium, hard) u drugom divu "dodatak" se prikazuju tajmer, brojac pokusaja (Moves) i rating sa tri zvezdice, a u odredjenim praznim divovima, f-jom dogadjaj(nivo), se smestaju polja sa razlicitim brojem kartica u zavisnosti koji nivo smo izabrali (easy=6;medium=10;hard=12).
 Kartice sa slicicama (front) o po
+
+-naslov preko animacije (ubacena pozadinska slika preko slova sa -webkit-background-clip: text;
+    animation: animate 15s linear infinite;
