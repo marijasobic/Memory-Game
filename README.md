@@ -11,10 +11,9 @@ Igra se sastoji od jedne HTML stranice.
 
 - Klikom na dugmice nivoa (easy, medium, hard) u drugom divu  *"dodatak"*  se prikazuju tajmer, brojac pokusaja (Moves) i rating sa tri zvezdice, a u odredjenim praznim divovima, f-jom  *dogadjaj(nivo)* , se smestaju polja sa razlicitim brojem kartica u zavisnosti koji nivo smo izabrali (easy=6;medium=10;hard=12).
 
-- Kartice sa slicicama (*.kartica*) se otvaraju (transition: all 0.4s linear;
-                                                 transform-style: preserve-3d; 
-                                      (*.front*) transform: rotateY(180deg); )
-    f-ja  *otvaranje(nivo)*  , sa prvim klikom se pokrece tajmer (otvorene kartice se smestaju u niz  *otvoreneKartice* ), kad se upare smestaju se u niz  *upareneKartice*  (cija se duzina uporedjuje sa brojem razlicitih kartica za odredjeni nivo).
+- Kartice sa slicicama (*.kartica*) se otvaraju ( transition: all 0.4s linear; transform-style: preserve-3d; (*.front*) transform: rotateY(180deg); )
+
+    -f-ja  *otvaranje(nivo)*  , sa prvim klikom se pokrece tajmer (otvorene kartice se smestaju u niz  *otvoreneKartice* ), kad se upare smestaju se u niz  *upareneKartice*  (cija se duzina uporedjuje sa brojem razlicitih kartica za odredjeni nivo).
 - Kad se dve kartice upare dodaje se klasa *.match* (koja sklanja sliku) i kartice nestaju sa polja.
 
 - Kad se sve kartice upare poziva se f-ja *cestitamo(nivo)* preko koje se otvara modal sa podacima vreme (finalTime), broj poteza (klik) i broj osvojenih zvezdica(starRating); 
@@ -32,5 +31,5 @@ Igra se sastoji od jedne HTML stranice.
     
 # Ostalo
 
-- Slicice za kartice koriscene sa sajta https://www.peecheey.com/ (Free Vector Resoursces)
+- Slicice za kartice koriscene sa sajta https://www.peecheey.com/ (Free Vector Resources)
 - Font slova koriscen sa https://fonts.google.com/
