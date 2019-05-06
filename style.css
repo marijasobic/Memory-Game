@@ -215,10 +215,10 @@ transition: all 5s ease-in-out;
 /* Animacija za naslovna slova */
 @keyframes animate {
     0% {
-        background-position: left 0px top 10px;
+        background-position: left 0px top 0px;
     }
     40% {
-        background-position: left 800px top 10px;
+        background-position: left 800px top 0px;
     }
 }
 /* za close dugme x koje zatvara modal */
