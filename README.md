@@ -22,7 +22,6 @@ Igra se sastoji od jedne HTML stranice.
     (animation: animate 15s linear infinite;)
 
 # Korišćene tehnologije
-
     Html
     CSS
     JavaScript
@@ -30,6 +29,8 @@ Igra se sastoji od jedne HTML stranice.
     Font Awesome
     
 # Ostalo
-
 - Slicice za kartice koriscene sa sajta https://www.peecheey.com/ (Free Vector Resources)
 - Font slova koriscen sa https://fonts.google.com/
+
+# Responzivni dizajn
+- Igrica je prilagodjena i mobilnom prikazu.
